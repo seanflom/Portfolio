@@ -1,131 +1,300 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ren — Creative Portfolio</title>
-<style>
-* { box-sizing: border-box; }
+<style>:root {
+--bg: #f5f7f9;
+--card: #ffffff;
+--text: #1f2933;
+--muted: #52606d;
+--accent: #1f6f8b;
+--accent-light: #d9eef4;
+--border: #d9e2ec;
+}
+* {
+box-sizing: border-box;
+}
 body {
 margin: 0;
-background: #f4f1e9;
-color: #30372d;
-font: 16px/1.7 Georgia, serif;
-}
-a { color: inherit; text-underline-offset: 6px; }
-header, main, footer {
-max-width: 1000px;
-margin: auto;
-padding: 28px;
+font-family: Arial, Helvetica, sans-serif;
+background: var(--bg);
+color: var(--text);
+line-height: 1.6;
 }
 header {
+background: linear-gradient(135deg, #174a5a, #1f6f8b);
+color: white;
+padding: 3rem 1.5rem;
+}
+.container {
+max-width: 1100px;
+margin: 0 auto;
+}
+nav {
 display: flex;
-justify-content: space-between;
+flex-wrap: wrap;
+gap: 1rem;
+margin-top: 1.25rem;
+}
+nav a {
+color: white;
+text-decoration: none;
+font-weight: bold;
+}
+.hero h1 {
+margin: 0;
+font-size: 2.4rem;
+}
+.hero p {
+max-width: 700px;
+margin-top: 0.75rem;
+font-size: 1.05rem;
+}
+.buttons {
+margin-top: 1.5rem;
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+}
+.button {
+background: white;
+color: var(--accent);
+padding: 0.75rem 1rem;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+}
+main {
+padding: 2rem 1.5rem 4rem;
+}
+section {
+margin-top: 2rem;
+}
+.card {
+background: var(--card);
+border: 1px solid var(--border);
+border-radius: 14px;
+padding: 1.5rem;
+box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+h2 {
+margin-top: 0;
+color: #12343f;
+}
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap: 1rem;
+}
+.skills-list, .project-meta {
+padding-left: 1.2rem;
+}
+.project-image {
+width: 100%;
+height: 220px;
+border-radius: 10px;
+background: var(--accent-light);
+border: 1px dashed var(--accent);
+display: flex;
 align-items: center;
+justify-content: center;
+color: var(--accent);
+font-weight: bold;
+margin-bottom: 1rem;
+text-align: center;
+padding: 1rem;
 }
-.logo { font-size: 24px; text-decoration: none; }
-nav { display: flex; gap: 24px; font: 14px sans-serif; }
-nav a { text-decoration: none; }
-.hero { padding: 80px 0; position: relative; }
-.circle {
-width: 150px;
-height: 150px;
-border: 12px solid #a34c3e;
-border-right-color: transparent;
-border-radius: 50%;
-transform: rotate(-25deg);
-opacity: .8;
+.tag-group {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+margin-top: 0.75rem;
 }
-.eyebrow {
-margin-top: 32px;
-font: 12px sans-serif;
-letter-spacing: 3px;
-text-transform: uppercase;
+.tag {
+background: var(--accent-light);
+color: #184b5a;
+padding: 0.35rem 0.7rem;
+border-radius: 999px;
+font-size: 0.9rem;
 }
-h1 {
-max-width: 650px;
-margin: 16px 0;
-font-size: clamp(42px, 8vw, 76px);
-font-weight: normal;
-line-height: 1.1;
+footer {
+text-align: center;
+color: var(--muted);
+padding: 2rem 1rem 3rem;
 }
-.intro { max-width: 440px; color: #666c60; }
-h2 { font-size: 24px; font-weight: normal; }
-.projects {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 24px;
+@media (max-width: 700px) {
+.hero h1 {
+font-size: 2rem;
 }
-article { border-top: 1px solid #bfc3b6; padding-top: 20px; }
-.art {
-height: 190px;
-display: grid;
-place-items: center;
-background: #e1e4d8;
-}
-.stone {
-width: 100px;
-height: 65px;
-background: #7d8573;
-border-radius: 55% 45% 40% 60%;
-box-shadow: 0 14px 20px #30372d18;
-}
-.sand {
-background: repeating-radial-gradient(
-ellipse at center, #e8dfcf 0 9px, #d9cdb8 10px 11px
-);
-}
-article h3 { margin-bottom: 0; font-weight: normal; }
-article p { margin-top: 4px; color: #666c60; }
-#contact { padding: 65px 0 30px; }
-footer { border-top: 1px solid #d5d7cc; font-size: 13px; }
-a:focus-visible { outline: 2px solid #a34c3e; outline-offset: 6px; }
-@media (max-width: 550px) {
-.projects { grid-template-columns: 1fr; }
-.hero { padding: 45px 0; }
-nav { gap: 16px; }
-}
-</style>
-</head>
-<body>
+}</style>
 <header>
-<a class="logo" href="#" aria-label="Ren home">ren.</a>
-<nav aria-label="Main navigation">
-<a href="#work">Work</a>
-<a href="#contact">Contact</a>
-</nav>
+  <div class="container hero">
+    <h1>Sean Flom</h1>
+    <p>GIS Portfolio | Spatial Analysis | Cartography | Remote Sensing</p>
+    <p>Student of geography, environmental science, and planning with extensive lab and professional experience. Focused on spatial applications in urban planning, public and private infrastructure, urban forestry and environmental health and quality.</p>
+    <div class="buttons">
+      <a class="button" href="#projects">View Projects</a> 
+      <a class="button" href="#skills">Skills</a> 
+      <a class="button" href="#contact">Contact</a>
+    </div>
+    <nav>
+      <a href="#about">About</a> 
+      <a href="#skills">Skills</a> 
+      <a href="#projects">Projects</a> 
+      <a href="#resume">Resume</a> 
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
-<main>
-<section class="hero" aria-labelledby="intro">
-<div class="circle" aria-hidden="true"></div>
-<p class="eyebrow">Designer · Maker · Observer</p>
-<h1 id="intro">Space for<br>what matters.</h1>
-<p class="intro">
-I’m Ren, a designer finding beauty in simplicity,
-natural forms, and thoughtful everyday experiences.
-</p>
-<a href="#work">Explore selected work </a>↗
-</section>
-<section id="work" aria-labelledby="work-title">
-<h2 id="work-title">Selected work</h2>
-<div class="projects">
-<article>
-<div class="art" aria-hidden="true"><div class="stone"></div></div>
-<h3>Still Form</h3>
-<p>Brand identity / 2026</p>
-</article>
-<article>
-<div class="art sand" aria-hidden="true"></div>
-<h3>Quiet Patterns</h3>
-<p>Digital experience / 2026</p>
-</article>
-</div>
-</section>
-<section id="contact">
-<h2>Let’s create something thoughtful.</h2>
-<a href="mailto:hello@example.com">hello@example.com </a>↗
-</section>
+<main class="container">
+  <section id="about">
+    <div class="card">
+      <h2>About Me</h2>
+      <p>I am a senior-year student majoring in Geography (B.A) with minors in Geospatial Analysis and Environmental Planning at Cal Poly Humboldt. I am passionate about all things related the representation and analysis of spatial data, particularly as they relate to the built environment. In addition to GIScience, I have studied biology, botany, chemistry, and forestry. I am interested in the confluence of the human and natural environments in urban environments, and hope to use GIS to represent, manage and interpret how these two worlds intermingle.</p>
+    </div>
+  </section>
+  <section id="skills">
+    <div class="grid">
+      <div class="card">
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+          <li>Spatial analysis</li>
+          <li>Cartographic design</li>
+          <li>Raster and vector workflows</li>
+          <li>Georeferencing and data cleaning</li>
+          <li>Remote sensing basics</li>
+          <li>Field data collection</li>
+          <li>Forestry</li>
+          <li>Biology</li>
+          <li>Chemistry
+            <br>
+          </li>
+          <li>Languages: S
+            <span style="font-weight: 400;">panish (B2), Russian (C1), basic French and Swedish (A1)</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Tools</h2>
+        <ul class="skills-list">
+          <li>ESRI Products (ArcGIS Pro, Online, Experience Builder, StoryMaps)</li>
+          <li>
+            <span style="font-weight: 400;">GPS tools (Avenza)</span>
+          </li>
+          <li>R</li>
+          <li>SQL</li>
+          <li>Adobe Illustrator</li>
+          <li>Microsoft Suite of Tools</li>
+          <li>GIMP</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Career Focus</h2>
+        <p>Interested in land use management, environmental planning, local government, and public service</p>
+        <div class="tag-group">
+          <span class="tag">Planning</span> 
+          <span class="tag">Environmental Consulting</span> 
+          <span class="tag">Land Use</span> 
+          <span class="tag">CEQA/NEPA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>
+          <img src="https://share1.cloudhq-mkt3.net/af6cf6bc167e5d.png" alt="" width="291" height="95">
+          <br>Observing Walkability: A Comparison Between Portland and Phoenix
+        </h3>
+        <p>This project examined urban elements and amenities that influence walkability in Portland and Phoenix.</p>
+        <ul class="project-meta">
+          <li>
+            <strong>Goal:</strong> Identify urban heat hotspots
+          </li>
+          <li>
+            <strong>Tools:</strong> ArcGIS Pro, R
+          </li>
+          <li>
+            <strong>Skills:</strong> Cartography, correlation testing, geostatistics
+          </li>
+        </ul>
+        <p>
+          <strong>Employment relevance:</strong> Demonstrates practical usage of GIS and analytical tools towards urban design.
+        </p>
+      </div>
+      <div class="card">
+        <h3>
+          <span style="font-size: 15.21px;">
+            <img src="https://snflom.wordpress.com/wp-content/uploads/2025/10/75564741-e2ac-4b84-9919-66e5877d5cb0.pdf.jpg?w=1440" alt="" width="295" height="221">
+            <br>Relationship between Traffic Incidents and the Presence of Traffic Enforcement Cameras in the City of Denver, Colorado
+            <br>
+          </span>
+          <span style="font-size: small; font-weight: normal;">An interactive web map showing park locations, neighborhood access, and service areas to support community planning.</span>
+        </h3>
+        <ul class="project-meta">
+          <li>
+            <strong>Goal:</strong> Evaluate traffic camera efficacy in Denver
+          </li>
+          <li>
+            <strong>Tools:</strong> ArcGIS Pro
+          </li>
+          <li>
+            <strong>Skills:</strong> Kernel density, spatial analysis, data acquisition
+          </li>
+        </ul>
+        <p>
+          <strong>Employment relevance:</strong> Ability to use complex GIS tools for spatial analysis
+        </p>
+      </div>
+      <div class="card">
+        <h3>
+          <img src="https://share1.cloudhq-mkt3.net/a93b3ce57dff87.png" alt="" width="281" height="183">
+          <br>Transportation Solutions on the Cal Poly Humboldt Farm
+          <br>
+        </h3>
+        <p>Exploring the feasibility of a proposed park-and-ride lot in the Arcata Bottoms and how it might relieve some of the transportation burdens associated with commuting by vehicle to campus.</p>
+        <ul class="project-meta">
+          <li>
+            <strong>Goal:</strong> Analyze a proposed transportation solution for campus connectivity
+          </li>
+          <li>
+            <strong>Tools:</strong> ArcGIS Online, StoryMaps
+          </li>
+          <li>
+            <strong>Skills:</strong> Observational research, storytelling
+          </li>
+        </ul>
+        <p>
+          <strong>Employment relevance:</strong> Demonstrates an understanding in local transportation solutions
+        </p>
+      </div>
+    </div>
+  </section>
+  <section id="resume">
+    <div class="card">
+      <h2>Resume</h2>
+      <p>
+        <a href="https://share1.cloudhq-mkt3.net/d21a2a556431b9.pdf" target="_blank" class="cloudHQ__gmail_attachment_link" data="chq-data-file-attachment-on-s3" title="2026_ Updated Resume - Google Docs.pdf" rel="noopener">Attachment: 2026_ Updated Resume - Google Docs.pdf</a>
+      </p>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="card">
+      <h2>Contact</h2>
+      <p>Email: sean.flom@gmail.com</p>
+      <p>LinkedIn: 
+        <a href="LinkedIn">https://www.linkedin.com/in/sean-flom-9a165a3a3/</a>
+      </p>
+      <p>GitHub: 
+        <a href="https://seanflom.github.io/Portfolio/">https://seanflom.github.io/Portfolio/</a>
+      </p>
+    </div>
+  </section>
 </main>
-<footer>© 2026 Ren · Made with intention.</footer>
-</body>
-</html>
+<footer>GIS Portfolio Template for student adaptation on GitHub Pages or other portfolio platforms.</footer>
+<div>
+  <br>
+  <br>
+</div>
+<div>
+  <br>
+  <br>
+</div>
